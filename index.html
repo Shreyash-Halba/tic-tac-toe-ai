@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Tic-Tac-Toe mini project using the Minimax algorithm." />
+  <title>AI Tic-Tac-Toe | Minimax</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="app">
+    <header class="hero">
+      <div class="project-pill"><span class="pill-dot"></span> INTRODUCTION TO ARTIFICIAL INTELLIGENCE</div>
+      <h1>AI <span>Tic-Tac-Toe</span></h1>
+      <p class="subtitle">
+        A strategic game powered by the <strong>Minimax algorithm</strong> — the computer
+        searches future game states before choosing its move.
+      </p>
+    </header>
+
+    <section class="controls card">
+      <div class="control-group">
+        <label for="difficulty">PLAY AGAINST AI</label>
+        <select id="difficulty">
+          <option value="easy">Easy — Random Moves</option>
+          <option value="medium" selected>Medium — Mostly Smart</option>
+          <option value="hard">Hard — Minimax AI</option>
+        </select>
+      </div>
+
+      <div class="scoreboard">
+        <div class="score-chip player-chip"><span>You</span><strong id="playerScore">0</strong></div>
+        <div class="score-chip ai-chip"><span>AI</span><strong id="aiScore">0</strong></div>
+        <div class="score-chip draw-chip"><span>Draws</span><strong id="drawScore">0</strong></div>
+      </div>
+
+      <button id="newGameBtn" class="btn primary">
+        <span>↻</span> New Game
+      </button>
+    </section>
+
+    <section class="game-card card">
+      <div class="game-head">
+        <div>
+          <div class="section-kicker">CURRENT MATCH</div>
+          <h2>Beat the algorithm.</h2>
+        </div>
+        <div class="status-badge">
+          <span class="live-dot"></span>
+          <span id="aiThinking" aria-live="polite">AI is ready.</span>
+        </div>
+      </div>
+
+      <div id="status" class="status">Your turn — you are X.</div>
+
+      <div id="board" class="board" aria-label="Tic-Tac-Toe board">
+        <button class="cell" data-index="0" aria-label="Cell 1"></button>
+        <button class="cell" data-index="1" aria-label="Cell 2"></button>
+        <button class="cell" data-index="2" aria-label="Cell 3"></button>
+        <button class="cell" data-index="3" aria-label="Cell 4"></button>
+        <button class="cell" data-index="4" aria-label="Cell 5"></button>
+        <button class="cell" data-index="5" aria-label="Cell 6"></button>
+        <button class="cell" data-index="6" aria-label="Cell 7"></button>
+        <button class="cell" data-index="7" aria-label="Cell 8"></button>
+        <button class="cell" data-index="8" aria-label="Cell 9"></button>
+      </div>
+
+      <div class="legend">
+        <span><b class="x-dot">X</b> You</span>
+        <span><b class="o-dot">O</b> AI</span>
+        <span class="legend-note">Hard mode uses Minimax search</span>
+      </div>
+    </section>
+
+    <section class="explain card">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">UNDER THE HOOD</div>
+          <h2>How the AI thinks</h2>
+        </div>
+        <div class="algorithm-tag">MINIMAX</div>
+      </div>
+
+      <div class="steps">
+        <article>
+          <span>01</span>
+          <h3>Generate moves</h3>
+          <p>The AI checks every legal position available on the current board.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Explore the tree</h3>
+          <p>It recursively simulates how the game could continue from each move.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Score outcomes</h3>
+          <p>Wins, losses and draws are converted into utility scores for comparison.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Choose the best</h3>
+          <p>The AI selects the move with the strongest guaranteed result.</p>
+        </article>
+      </div>
+
+      <div class="note">
+        <div class="note-icon">AI</div>
+        <p><strong>Classical Artificial Intelligence:</strong> this project uses state-space search and decision-making, not machine learning.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>B.Tech Mini Project</span>
+      <span class="footer-dot">•</span>
+      <span>Introduction to Artificial Intelligence</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
